@@ -14,7 +14,7 @@
 {
             "protocol": "socks",
             "tag": "herokuapp",
-            "settings": {"servers": [{"address": "xxxxxxxxx.herokuapp.com": 443}]},
+            "settings": {"servers": [{"address": "xxxxxxxxx.herokuapp.com","port": 443}]},
             "streamSettings": {"network": "ws","security": "tls","tlsSettings": {"allowInsecure": false,"serverName": "xxxxxxxxx.herokuapp.com"},"wsSettings": {"path": "/ws","headers": {"Host": "xxxxxxxxx.herokuapp.com"}}}
 }
 ```
