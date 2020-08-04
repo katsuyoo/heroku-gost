@@ -21,7 +21,7 @@
   
 * gost -L=:1080 -F=socks5+wss://xxxxxxxxx.herokuapp.com:443
   
-#### 三. 搭配clouflare cdn
+#### 三. 搭配clouflare cdn（可选）
 * [参考IBMYes项目的这里](https://github.com/CCChieh/IBMYes#cloudflare-%E9%AB%98%E9%80%9F%E8%8A%82%E7%82%B9%E4%B8%AD%E8%BD%AC)，修改`url.hostname`为**app**分配到的`xxxxxxxxx.herokuapp.com`
   
 #### 四. 关于变量 METHOD 使用范例
@@ -30,6 +30,10 @@
   > `-F=ss://AEAD_CHACHA20_POLY1305:password@server_ip:833?bypass=~*.btstatic.com,*.netflix.com,*.netflix.net,*.nflxext.com,*.nflximg.com,*.nflximg.net,*.nflxsearch.net,*.nflxso.net,*.nflxvideo.net`
    
   更多自定义使用方式参考 https://github.com/ginuerzh/gost/ https://docs.ginuerzh.xyz/gost/  
+   
+#### 其它： 部署到kintohub (免费版限定10G流量)
+  使用Kockerflie文件，端口自定义，变量METHOD中设置方式和同个自定义端口，客户端使用方式同部署到Heroku的方式一致
+  > 例如METHOD值： `-L=socks5+ws://:80`
   
 ##### END? 谁告诉我怎么全自定义参数啊??? 
   尝试把`-L socks5+ws://:$PORT`包括到METHOD内，就会导致部署失败  
