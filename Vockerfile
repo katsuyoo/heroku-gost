@@ -7,9 +7,10 @@ RUN git clone --progress https://github.com/v2fly/v2ray-core.git . && \
 FROM alpine
 
 COPY --from=builder /tmp/v2ray.tgz /tmp
-RUN apk update && apk add ca-certificates && \
+RUN apk update && apk add --no-cache ca-certificates && \
     mkdir -p /usr/bin/v2ray && \
-    tar xvfz /tmp/v2ray.tgz -C /usr/bin/v2ray
+    tar xvfz /tmp/v2ray.tgz -C /usr/bin/v2ray && \
+    rm -rf /tmp/v2ray.tgz
 
 ENV CONFIG=https://gist.githubusercontent.com/mixool/a38098198e8d9fd9166de46d737b104c/raw/a8b5f1a0d27f3120960305d2e98aafecc36b9450/v2config
 CMD /usr/bin/v2ray/v2ray -config $CONFIG
